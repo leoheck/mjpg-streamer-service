@@ -1,0 +1,14 @@
+[Unit]
+Description = MJPEG Streamer server
+Wants = network-online.target
+After = network.target network-online.target
+
+[Service]
+ExecStart = mjpg_streamer -i /usr/local/lib/mjpg-streamer/input_uvc.so -o "/usr/local/lib/mjpg-streamer/output_http.so -p 8080"
+RemainAfterExit = no
+Restart = on-failure
+RestartSec = 5s
+
+[Install]
+WantedBy = default.target
+
