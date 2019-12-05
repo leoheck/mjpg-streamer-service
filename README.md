@@ -1,2 +1,3 @@
-# mjpg-streamer-service
-mjpg-streamer-service
+
+v4l2-ctl --list-devices
+
